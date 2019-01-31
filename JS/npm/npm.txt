@@ -1,0 +1,110 @@
+npm is an acronym for node package manager so it is a package manager for javascript packages
+it is synonymous to pip for python, composer for php and rubygems for ruby on rails
+installed with node js runtime
+
+used for installing and uninstalling packages and libraries
+- install,remove, update and list packages
+- package.json
+- local and global packages
+- deps and dev-deps
+- commands and shortcuts
+- versioning
+- npm scripts
+
+commands and what they do
+
+npm -v    or npm --version
+version of npm 
+
+npm or npm help
+for help
+
+package.json
+its a manifest file with all information, holds all the app's dependencies,
+modules the app is running on
+specifies if versions should be updated
+creates npm scripts
+
+can be created by 
+npm init command and answer the meta questions
+to avoid the questions, used
+npm init --yes
+
+can also set this data manually
+npm config set init-author-name "Alvin"
+npm init --yes
+
+npm config get init-author-name //to display the value
+npm config delete init-author-name   //to delete
+
+lodash
+javascript library with utility functions e.g set arrays, loops, timeouts
+
+install packages
+npm install lodash --save
+save so that it gets include in package.json
+
+to run a file the command is
+node index.js or just node index
+
+a dev dependency is a package that you wanna install during development, but wont be required in the production app
+e.g. gulp, minifier
+when you commit to a repository then the other person deploying would
+use 
+npm install --production 
+to exclude the devdependencies
+
+to uninstall a package
+npm uninstall packageName --save
+npm remove packageName --save
+npm rm packageName
+npm un packageName
+
+versioning
+to install a certain version
+npm install packageName@4.17.3 --save
+
+to update the version
+npm update packageName
+
+A package version has the structure
+
+8.2.6
+
+8 - major version, reps major changes that can break your api
+2 - minor version, new features but dont break the api
+6 - patch version, bug fixes, the larger it is, the better the major version
+
+in package.json
+
+dependencies 
+e.g.
+"lodash":"^4.17.4", ^ means on running npm install, it installs the latest minor version, from 4.17.4 to 4.18.0 or sth like that, 
+if 4 becomes 5, major version wont be changed
+
+"lodash":"~4.17.4", ~ means it will update to the latest patch version e.g. from 4.17.4 to 4.17.8
+
+"lodash":"4.17.4", installs that exact version strictly
+
+"lodash":"*", installs the latest version updates all versions (not advisable since api might break)
+
+Global dependencies/modules 
+
+e.g. nodeman
+installed using -g flag e.g.
+npm install -g nodeman
+
+not installed in node_modules but on the machine itself
+
+find out where it is on the machine using
+npm root -g
+
+npm list
+list of packages and their dependencies
+
+npm list --depth 0 to display only level 0 dependencies
+
+scripts
+when you create a script then you can put it into scripts in package.json
+and run it using
+nom run server i.e. if its key was 'server' in scripts 
